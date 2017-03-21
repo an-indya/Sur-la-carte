@@ -1,0 +1,365 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7AA58F31E80CB7A0001FC44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA58F21E80CB7A0001FC44 /* AppDelegate.swift */; };
+		C7AA58F51E80CB7A0001FC44 /* MapModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA58F41E80CB7A0001FC44 /* MapModeViewController.swift */; };
+		C7AA58F71E80CB7A0001FC44 /* ListModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA58F61E80CB7A0001FC44 /* ListModeViewController.swift */; };
+		C7AA58FA1E80CB7A0001FC44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7AA58F81E80CB7A0001FC44 /* Main.storyboard */; };
+		C7AA58FC1E80CB7A0001FC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7AA58FB1E80CB7A0001FC44 /* Assets.xcassets */; };
+		C7AA58FF1E80CB7A0001FC44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7AA58FD1E80CB7A0001FC44 /* LaunchScreen.storyboard */; };
+		C7AA59091E80CC830001FC44 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7AA59061E80CC830001FC44 /* Roboto-Medium.ttf */; };
+		C7AA590A1E80CC830001FC44 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7AA59071E80CC830001FC44 /* Roboto-Regular.ttf */; };
+		C7AA590B1E80CC830001FC44 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C7AA59081E80CC830001FC44 /* Roboto-Thin.ttf */; };
+		C7AA590E1E80DE5F0001FC44 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA590D1E80DE5F0001FC44 /* LoginManager.swift */; };
+		C7AA59101E80E09E0001FC44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA590F1E80E09E0001FC44 /* LoginViewController.swift */; };
+		C7AA59121E80E1380001FC44 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA59111E80E1380001FC44 /* NotificationManager.swift */; };
+		C7AA59141E80E4990001FC44 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA59131E80E4990001FC44 /* Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C7AA58EF1E80CB7A0001FC44 /* Surlacarte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surlacarte.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7AA58F21E80CB7A0001FC44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C7AA58F41E80CB7A0001FC44 /* MapModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModeViewController.swift; sourceTree = "<group>"; };
+		C7AA58F61E80CB7A0001FC44 /* ListModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModeViewController.swift; sourceTree = "<group>"; };
+		C7AA58F91E80CB7A0001FC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C7AA58FB1E80CB7A0001FC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7AA58FE1E80CB7A0001FC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C7AA59001E80CB7A0001FC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7AA59061E80CC830001FC44 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		C7AA59071E80CC830001FC44 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		C7AA59081E80CC830001FC44 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		C7AA590D1E80DE5F0001FC44 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		C7AA590F1E80E09E0001FC44 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C7AA59111E80E1380001FC44 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		C7AA59131E80E4990001FC44 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7AA58EC1E80CB7A0001FC44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C7AA58E61E80CB7A0001FC44 = {
+			isa = PBXGroup;
+			children = (
+				C7AA58F11E80CB7A0001FC44 /* Surlacarte */,
+				C7AA58F01E80CB7A0001FC44 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7AA58F01E80CB7A0001FC44 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7AA58EF1E80CB7A0001FC44 /* Surlacarte.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7AA58F11E80CB7A0001FC44 /* Surlacarte */ = {
+			isa = PBXGroup;
+			children = (
+				C7AA59001E80CB7A0001FC44 /* Info.plist */,
+				C7AA58F21E80CB7A0001FC44 /* AppDelegate.swift */,
+				C7AA58F61E80CB7A0001FC44 /* ListModeViewController.swift */,
+				C7AA590F1E80E09E0001FC44 /* LoginViewController.swift */,
+				C7AA58F41E80CB7A0001FC44 /* MapModeViewController.swift */,
+				C7AA58FB1E80CB7A0001FC44 /* Assets.xcassets */,
+				C7AA590C1E80CC9B0001FC44 /* Font */,
+				C7AA59151E80EAC10001FC44 /* Helpers */,
+				C7AA59161E80EAD80001FC44 /* UI */,
+			);
+			path = Surlacarte;
+			sourceTree = "<group>";
+		};
+		C7AA590C1E80CC9B0001FC44 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				C7AA59061E80CC830001FC44 /* Roboto-Medium.ttf */,
+				C7AA59071E80CC830001FC44 /* Roboto-Regular.ttf */,
+				C7AA59081E80CC830001FC44 /* Roboto-Thin.ttf */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		C7AA59151E80EAC10001FC44 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C7AA590D1E80DE5F0001FC44 /* LoginManager.swift */,
+				C7AA59111E80E1380001FC44 /* NotificationManager.swift */,
+				C7AA59131E80E4990001FC44 /* Extensions.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		C7AA59161E80EAD80001FC44 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C7AA58FD1E80CB7A0001FC44 /* LaunchScreen.storyboard */,
+				C7AA58F81E80CB7A0001FC44 /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7AA58EE1E80CB7A0001FC44 /* Surlacarte */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7AA59031E80CB7A0001FC44 /* Build configuration list for PBXNativeTarget "Surlacarte" */;
+			buildPhases = (
+				C7AA58EB1E80CB7A0001FC44 /* Sources */,
+				C7AA58EC1E80CB7A0001FC44 /* Frameworks */,
+				C7AA58ED1E80CB7A0001FC44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Surlacarte;
+			productName = Surlacarte;
+			productReference = C7AA58EF1E80CB7A0001FC44 /* Surlacarte.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7AA58E71E80CB7A0001FC44 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Udacity;
+				TargetAttributes = {
+					C7AA58EE1E80CB7A0001FC44 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 599BY8F53P;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C7AA58EA1E80CB7A0001FC44 /* Build configuration list for PBXProject "Surlacarte" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C7AA58E61E80CB7A0001FC44;
+			productRefGroup = C7AA58F01E80CB7A0001FC44 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7AA58EE1E80CB7A0001FC44 /* Surlacarte */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7AA58ED1E80CB7A0001FC44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7AA59091E80CC830001FC44 /* Roboto-Medium.ttf in Resources */,
+				C7AA58FF1E80CB7A0001FC44 /* LaunchScreen.storyboard in Resources */,
+				C7AA590B1E80CC830001FC44 /* Roboto-Thin.ttf in Resources */,
+				C7AA590A1E80CC830001FC44 /* Roboto-Regular.ttf in Resources */,
+				C7AA58FC1E80CB7A0001FC44 /* Assets.xcassets in Resources */,
+				C7AA58FA1E80CB7A0001FC44 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7AA58EB1E80CB7A0001FC44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7AA59121E80E1380001FC44 /* NotificationManager.swift in Sources */,
+				C7AA58F71E80CB7A0001FC44 /* ListModeViewController.swift in Sources */,
+				C7AA590E1E80DE5F0001FC44 /* LoginManager.swift in Sources */,
+				C7AA58F31E80CB7A0001FC44 /* AppDelegate.swift in Sources */,
+				C7AA59101E80E09E0001FC44 /* LoginViewController.swift in Sources */,
+				C7AA58F51E80CB7A0001FC44 /* MapModeViewController.swift in Sources */,
+				C7AA59141E80E4990001FC44 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C7AA58F81E80CB7A0001FC44 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7AA58F91E80CB7A0001FC44 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C7AA58FD1E80CB7A0001FC44 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7AA58FE1E80CB7A0001FC44 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C7AA59011E80CB7A0001FC44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7AA59021E80CB7A0001FC44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7AA59041E80CB7A0001FC44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 599BY8F53P;
+				INFOPLIST_FILE = Surlacarte/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.Surlacarte;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C7AA59051E80CB7A0001FC44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 599BY8F53P;
+				INFOPLIST_FILE = Surlacarte/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.Surlacarte;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7AA58EA1E80CB7A0001FC44 /* Build configuration list for PBXProject "Surlacarte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7AA59011E80CB7A0001FC44 /* Debug */,
+				C7AA59021E80CB7A0001FC44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7AA59031E80CB7A0001FC44 /* Build configuration list for PBXNativeTarget "Surlacarte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7AA59041E80CB7A0001FC44 /* Debug */,
+				C7AA59051E80CB7A0001FC44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C7AA58E71E80CB7A0001FC44 /* Project object */;
+}
