@@ -8,25 +8,30 @@
 
 import UIKit
 
-enum ContentType: String {
-    case map = "Map"
-    case list = "List"
-}
+final class LoginViewController: UIViewController {
 
-class LoginViewController: UIViewController {
-
+    @IBOutlet var errorview: ErrorView!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     let notificationManager = KeyboardNotificationManager.shared
+    let loginManager = LoginManager()
+    fileprivate var isUserInputValid : Bool {
+        if let username = usernameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            password.characters.count > 0,
+            username.characters.count > 0 {
+            return true
+        }
+        return false
+    }
+
+    //MARK: - View Lifecycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
         notificationManager.viewController = self
         hideKeyboardWhenTappedAround()
         setNeedsStatusBarAppearanceUpdate()
-        // Do any additional setup after loading the view.
-    }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -39,17 +44,38 @@ class LoginViewController: UIViewController {
         notificationManager.unsubscribeFromAllKeyboardNotifications()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: - Event Handlers
+
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
-    
+
     @IBAction func didTapLoginButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "showContent", sender: ContentType.map)
+        guard isUserInputValid else {
+            self.displayError(errorMessage: CopyText.loginInvalid)
+            return
+        }
+        sender.setTitle(CopyText.loginProgress, for: .normal)
+        sender.isEnabled = false
+
+        _ = loginManager.handleAuthentication(with: UserCredentials(username: usernameTextField.text!, password: passwordTextField.text!)).success { (sessionData) in
+            self.loginManager.isUserLoggedIn = true
+            _ = self.loginManager.fetchUserData(with: sessionData.accountKey).success(successClosure: { (userData) in
+                UserDefaultsManager.setObject(object: userData, for: Keys.kUserDataKey)
+                DispatchQueue.main.async {
+                    sender.setTitle(CopyText.login, for: .normal)
+                    sender.isEnabled = true
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }).failure {
+                self.displayError(errorMessage: CopyText.loginErrorMessage)
+            }}.failure {
+                self.displayError(errorMessage: CopyText.loginErrorMessage)
+            }
     }
 
     @IBAction func didTapSignupButton(_ sender: UIButton) {
-        if let udacitySignupURL = URL(string: "https://www.udacity.com/account/auth#!/signup") {
+        if let udacitySignupURL = URL(string: "\(URLs.udacityBaseURL)\(Endpoints.signup)") {
             UIApplication.shared.open(udacitySignupURL, options: [String: Any](), completionHandler: nil)
         }
     }
@@ -57,16 +83,9 @@ class LoginViewController: UIViewController {
     @IBAction func didTapFBButton(_ sender: UIButton) {
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func displayError(errorMessage: String) {
+        MessageManager.display(type: .error, message: errorMessage, in: self, with: errorview)
     }
-    */
-
 }
 
 extension LoginViewController: UITextFieldDelegate {

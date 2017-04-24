@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C722BAE61E9F262F004FAF49 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722BAE51E9F262F004FAF49 /* LocationTableViewCell.swift */; };
+		C722BAE91EA0695D004FAF49 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722BAE81EA0695D004FAF49 /* AddLocationViewController.swift */; };
+		C780DFF41E94AA1A0056BE71 /* ResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780DFF31E94AA1A0056BE71 /* ResultHandler.swift */; };
+		C780DFF71E94C73C0056BE71 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C780DFF61E94C73C0056BE71 /* MapKit.framework */; };
+		C78CFF3C1E84B7FF009BABE0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78CFF3B1E84B7FF009BABE0 /* FBSDKLoginKit.framework */; };
+		C79877C31E835E3500C33C25 /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79877C21E835E3500C33C25 /* StoryboardManager.swift */; };
+		C79877C51E836FB900C33C25 /* ErrorMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79877C41E836FB900C33C25 /* ErrorMessageManager.swift */; };
+		C79877C71E838A8900C33C25 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79877C61E838A8900C33C25 /* ErrorView.swift */; };
 		C7AA58F31E80CB7A0001FC44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA58F21E80CB7A0001FC44 /* AppDelegate.swift */; };
 		C7AA58F51E80CB7A0001FC44 /* MapModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA58F41E80CB7A0001FC44 /* MapModeViewController.swift */; };
 		C7AA58F71E80CB7A0001FC44 /* ListModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA58F61E80CB7A0001FC44 /* ListModeViewController.swift */; };
@@ -20,9 +28,27 @@
 		C7AA59101E80E09E0001FC44 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA590F1E80E09E0001FC44 /* LoginViewController.swift */; };
 		C7AA59121E80E1380001FC44 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA59111E80E1380001FC44 /* NotificationManager.swift */; };
 		C7AA59141E80E4990001FC44 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA59131E80E4990001FC44 /* Extensions.swift */; };
+		C7AA59181E8211490001FC44 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA59171E8211490001FC44 /* Constants.swift */; };
+		C7AA591A1E8214A60001FC44 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA59191E8214A60001FC44 /* NetworkManager.swift */; };
+		C7AA591D1E8217BA0001FC44 /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA591C1E8217BA0001FC44 /* UserCredentials.swift */; };
+		C7AA591F1E821F3B0001FC44 /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA591E1E821F3B0001FC44 /* SessionData.swift */; };
+		C7AA59211E8226DD0001FC44 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA59201E8226DD0001FC44 /* JSONParser.swift */; };
+		C7AA59231E8233650001FC44 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA59221E8233650001FC44 /* UserDefaultsManager.swift */; };
+		C7AD2BC11E8F4E4200FF3A65 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AD2BC01E8F4E4200FF3A65 /* UserData.swift */; };
+		C7AD2BC31E8F553C00FF3A65 /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AD2BC21E8F553C00FF3A65 /* StudentLocation.swift */; };
+		C7AD2BC51E8F65F900FF3A65 /* StudentLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AD2BC41E8F65F900FF3A65 /* StudentLocationManager.swift */; };
+		C7F559A01E8F4BAE00693347 /* UIModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F5599F1E8F4BAE00693347 /* UIModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C722BAE51E9F262F004FAF49 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		C722BAE81EA0695D004FAF49 /* AddLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
+		C780DFF31E94AA1A0056BE71 /* ResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultHandler.swift; sourceTree = "<group>"; };
+		C780DFF61E94C73C0056BE71 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C78CFF3B1E84B7FF009BABE0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C79877C21E835E3500C33C25 /* StoryboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
+		C79877C41E836FB900C33C25 /* ErrorMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessageManager.swift; sourceTree = "<group>"; };
+		C79877C61E838A8900C33C25 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		C7AA58EF1E80CB7A0001FC44 /* Surlacarte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surlacarte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7AA58F21E80CB7A0001FC44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7AA58F41E80CB7A0001FC44 /* MapModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModeViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +64,16 @@
 		C7AA590F1E80E09E0001FC44 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C7AA59111E80E1380001FC44 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C7AA59131E80E4990001FC44 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C7AA59171E8211490001FC44 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C7AA59191E8214A60001FC44 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C7AA591C1E8217BA0001FC44 /* UserCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
+		C7AA591E1E821F3B0001FC44 /* SessionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
+		C7AA59201E8226DD0001FC44 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		C7AA59221E8233650001FC44 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		C7AD2BC01E8F4E4200FF3A65 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		C7AD2BC21E8F553C00FF3A65 /* StudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
+		C7AD2BC41E8F65F900FF3A65 /* StudentLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocationManager.swift; sourceTree = "<group>"; };
+		C7F5599F1E8F4BAE00693347 /* UIModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +81,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C780DFF71E94C73C0056BE71 /* MapKit.framework in Frameworks */,
+				C78CFF3C1E84B7FF009BABE0 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C722BAE71EA0693B004FAF49 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C7AA58F61E80CB7A0001FC44 /* ListModeViewController.swift */,
+				C7AA590F1E80E09E0001FC44 /* LoginViewController.swift */,
+				C7AA58F41E80CB7A0001FC44 /* MapModeViewController.swift */,
+				C722BAE81EA0695D004FAF49 /* AddLocationViewController.swift */,
+				C722BAE51E9F262F004FAF49 /* LocationTableViewCell.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C780DFF51E94C73C0056BE71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C780DFF61E94C73C0056BE71 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C78CFF3A1E84B7EC009BABE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C78CFF3B1E84B7FF009BABE0 /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C7AA58E61E80CB7A0001FC44 = {
 			isa = PBXGroup;
 			children = (
 				C7AA58F11E80CB7A0001FC44 /* Surlacarte */,
 				C7AA58F01E80CB7A0001FC44 /* Products */,
+				C780DFF51E94C73C0056BE71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,11 +137,11 @@
 		C7AA58F11E80CB7A0001FC44 /* Surlacarte */ = {
 			isa = PBXGroup;
 			children = (
+				C78CFF3A1E84B7EC009BABE0 /* Frameworks */,
+				C7AA591B1E8217A70001FC44 /* Models */,
 				C7AA59001E80CB7A0001FC44 /* Info.plist */,
 				C7AA58F21E80CB7A0001FC44 /* AppDelegate.swift */,
-				C7AA58F61E80CB7A0001FC44 /* ListModeViewController.swift */,
-				C7AA590F1E80E09E0001FC44 /* LoginViewController.swift */,
-				C7AA58F41E80CB7A0001FC44 /* MapModeViewController.swift */,
+				C722BAE71EA0693B004FAF49 /* ViewControllers */,
 				C7AA58FB1E80CB7A0001FC44 /* Assets.xcassets */,
 				C7AA590C1E80CC9B0001FC44 /* Font */,
 				C7AA59151E80EAC10001FC44 /* Helpers */,
@@ -96,9 +163,18 @@
 		C7AA59151E80EAC10001FC44 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C7AA59171E8211490001FC44 /* Constants.swift */,
 				C7AA590D1E80DE5F0001FC44 /* LoginManager.swift */,
 				C7AA59111E80E1380001FC44 /* NotificationManager.swift */,
 				C7AA59131E80E4990001FC44 /* Extensions.swift */,
+				C7AA59191E8214A60001FC44 /* NetworkManager.swift */,
+				C7AA59201E8226DD0001FC44 /* JSONParser.swift */,
+				C7AA59221E8233650001FC44 /* UserDefaultsManager.swift */,
+				C79877C21E835E3500C33C25 /* StoryboardManager.swift */,
+				C79877C41E836FB900C33C25 /* ErrorMessageManager.swift */,
+				C7F5599F1E8F4BAE00693347 /* UIModifier.swift */,
+				C7AD2BC41E8F65F900FF3A65 /* StudentLocationManager.swift */,
+				C780DFF31E94AA1A0056BE71 /* ResultHandler.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -110,6 +186,18 @@
 				C7AA58F81E80CB7A0001FC44 /* Main.storyboard */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		C7AA591B1E8217A70001FC44 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C7AA591C1E8217BA0001FC44 /* UserCredentials.swift */,
+				C7AA591E1E821F3B0001FC44 /* SessionData.swift */,
+				C79877C61E838A8900C33C25 /* ErrorView.swift */,
+				C7AD2BC01E8F4E4200FF3A65 /* UserData.swift */,
+				C7AD2BC21E8F553C00FF3A65 /* StudentLocation.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +234,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 599BY8F53P;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -188,13 +281,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F559A01E8F4BAE00693347 /* UIModifier.swift in Sources */,
+				C7AA591F1E821F3B0001FC44 /* SessionData.swift in Sources */,
+				C7AD2BC51E8F65F900FF3A65 /* StudentLocationManager.swift in Sources */,
+				C7AD2BC31E8F553C00FF3A65 /* StudentLocation.swift in Sources */,
+				C7AA591A1E8214A60001FC44 /* NetworkManager.swift in Sources */,
+				C7AA59211E8226DD0001FC44 /* JSONParser.swift in Sources */,
+				C7AA59231E8233650001FC44 /* UserDefaultsManager.swift in Sources */,
 				C7AA59121E80E1380001FC44 /* NotificationManager.swift in Sources */,
+				C722BAE61E9F262F004FAF49 /* LocationTableViewCell.swift in Sources */,
 				C7AA58F71E80CB7A0001FC44 /* ListModeViewController.swift in Sources */,
 				C7AA590E1E80DE5F0001FC44 /* LoginManager.swift in Sources */,
 				C7AA58F31E80CB7A0001FC44 /* AppDelegate.swift in Sources */,
+				C79877C31E835E3500C33C25 /* StoryboardManager.swift in Sources */,
+				C722BAE91EA0695D004FAF49 /* AddLocationViewController.swift in Sources */,
 				C7AA59101E80E09E0001FC44 /* LoginViewController.swift in Sources */,
 				C7AA58F51E80CB7A0001FC44 /* MapModeViewController.swift in Sources */,
+				C7AD2BC11E8F4E4200FF3A65 /* UserData.swift in Sources */,
 				C7AA59141E80E4990001FC44 /* Extensions.swift in Sources */,
+				C79877C51E836FB900C33C25 /* ErrorMessageManager.swift in Sources */,
+				C7AA59181E8211490001FC44 /* Constants.swift in Sources */,
+				C7AA591D1E8217BA0001FC44 /* UserCredentials.swift in Sources */,
+				C79877C71E838A8900C33C25 /* ErrorView.swift in Sources */,
+				C780DFF41E94AA1A0056BE71 /* ResultHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,9 +427,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 599BY8F53P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Surlacarte",
+				);
 				INFOPLIST_FILE = Surlacarte/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.Surlacarte;
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.onthemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -331,9 +444,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 599BY8F53P;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Surlacarte",
+				);
 				INFOPLIST_FILE = Surlacarte/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.Surlacarte;
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.onthemap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -358,6 +475,7 @@
 				C7AA59051E80CB7A0001FC44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
