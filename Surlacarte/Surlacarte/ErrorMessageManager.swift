@@ -14,22 +14,40 @@ enum MessageType : String {
     case success = "Success"
 }
 
-final class MessageManager : NSObject {
+final class MessageManager {
 
-    static func display(type: MessageType, message: String, in viewController: UIViewController, with errorview: ErrorView) {
-        let padding : CGFloat = 6
-        let minimumHeight: CGFloat = 44
-        var messageBoxHeight = message.height(withConstrainedWidth: UIScreen.main.bounds.width, font: applicationBodyFont) + padding
-        messageBoxHeight = messageBoxHeight < minimumHeight ? minimumHeight : messageBoxHeight
-        errorview.frame = CGRect(x: 0, y: -messageBoxHeight, width: UIScreen.main.bounds.width, height: messageBoxHeight)
-        errorview.errorMessage.text = message
-        errorview.backgroundColor = getBackgroundColor(for: type)
-        viewController.view.addSubview(errorview)
-        animateIn(view: errorview) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-                animateOut(view: errorview, offset: messageBoxHeight)
+    static func displayError(errorMessage: CopyText, errorType: ErrorType, errorView: ErrorView, viewController: UIViewController) {
+        switch errorType {
+        case .responseError:
+            fallthrough
+        case .userInputError:
+            MessageManager.display(type: .error, message: errorMessage, in: viewController, with: errorView)
+            break
+        case .connectionError:
+            MessageManager.display(type: .error,  message: .connectivityErrorMessage, in: viewController, with: errorView)
+            break
+        }
+    }
+
+    static func display(type: MessageType, message: CopyText, in viewController: UIViewController, with errorview: ErrorView) {
+        DispatchQueue.main.async {
+            let padding : CGFloat = 6
+            let minimumHeight: CGFloat = 44
+            let msg = message.rawValue
+            var messageBoxHeight = msg.height(withConstrainedWidth: UIScreen.main.bounds.width, font: applicationBodyFont) + padding
+            messageBoxHeight = messageBoxHeight < minimumHeight ? minimumHeight : messageBoxHeight
+            errorview.frame = CGRect(x: 0, y: -messageBoxHeight, width: UIScreen.main.bounds.width, height: messageBoxHeight)
+            errorview.errorMessage.text = msg
+            errorview.backgroundColor = getBackgroundColor(for: type)
+            viewController.view.addSubview(errorview)
+            viewController.view.bringSubview(toFront: errorview)
+            animateIn(view: errorview) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                    animateOut(view: errorview, offset: messageBoxHeight)
+                }
             }
         }
+
     }
 
     static func getBackgroundColor(for messageType: MessageType) -> UIColor {

@@ -23,6 +23,7 @@ final class ListModeViewController: UITableViewController, SegueHandler {
     override func viewDidLoad() {
         super.viewDidLoad()
         locations = studentLocationManager.downloadedLocations
+        clearsSelectionOnViewWillAppear = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,8 +35,9 @@ final class ListModeViewController: UITableViewController, SegueHandler {
     func fetchStudentLocations (completion: @escaping ((StudentLocations)->Void)) {
         _ = studentLocationManager.fetchStudentLocations().success(successClosure: { (locations) in
             completion(locations)
-        }).failure {
-            self.displayError(errorMessage: "Failed to fetch student locations")
+        }).failure { [weak self] errorType in
+            guard let weakself = self else { return }
+            MessageManager.displayError(errorMessage: CopyText.studentLocationFetchError, errorType: errorType, errorView: weakself.errorView, viewController: weakself)
         }
     }
 
@@ -49,7 +51,7 @@ final class ListModeViewController: UITableViewController, SegueHandler {
         }
     }
 
-    func displayError(errorMessage: String) {
+    func displayError(errorMessage: CopyText) {
         MessageManager.display(type: .error, message: errorMessage, in: self, with: errorView)
     }
 
@@ -87,10 +89,29 @@ final class ListModeViewController: UITableViewController, SegueHandler {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
         if locations.studentLocations.count > indexPath.row {
             let location = locations.studentLocations[indexPath.row]
-            performSegue(withIdentifier: SegueIdentifier.editLocation.rawValue, sender: location)
+            //Commenting out the following as this leads to editing the selected item
+            //performSegue(withIdentifier: SegueIdentifier.editLocation.rawValue, sender: location)
+
+            //We could prefix the links with http in case its not there. But in that call any garbage value is treated as link. So, google.com becomes http://google.com but unfortunately sdasdad becomes http://sdasdad which is also a valid link. So ignoring.
+            /*var link = location.mediaURL
+            if !link.contains("http") {
+                link = "http://" + link
+            }*/
+
+            if let url = URL(string: location.mediaURL) {
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [String : Any](), completionHandler: nil)
+                } else {
+                    tableView.deselectRow(at: indexPath, animated: true)
+                    MessageManager.display(type: .warning, message: .linkInvalid, in: self, with: errorView)
+                }
+            }
         }
+
+
     }
 }
 

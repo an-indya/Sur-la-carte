@@ -36,8 +36,9 @@ final class MapModeViewController: UIViewController, SegueHandler {
     func fetchStudentLocations (force: Bool, completion: @escaping ((StudentLocations)->Void)) {
         _ = studentLocationManager.fetchStudentLocations().success(successClosure: { (locations) in
             completion(locations)
-        }).failure {
-            self.displayError(errorMessage: "Failed to fetch student locations")
+        }).failure { [weak self] errorType in
+            guard let weakself = self else { return }
+            MessageManager.displayError(errorMessage: CopyText.studentLocationFetchError, errorType: errorType, errorView: weakself.errorView, viewController: weakself)
         }
     }
 
@@ -81,10 +82,6 @@ final class MapModeViewController: UIViewController, SegueHandler {
         }
     }
 
-    func displayError(errorMessage: String) {
-        MessageManager.display(type: .error, message: errorMessage, in: self, with: errorView)
-    }
-
     @IBAction func didTapLogout(_ sender: UIBarButtonItem) {
         LoginManager.logout()
     }
@@ -92,8 +89,7 @@ final class MapModeViewController: UIViewController, SegueHandler {
 
 extension MapModeViewController: MKMapViewDelegate {
 
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
-    {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotationView")
         annotationView.canShowCallout = true
         annotationView.rightCalloutAccessoryView = UIButton.init(type: UIButtonType.detailDisclosure)
@@ -101,12 +97,26 @@ extension MapModeViewController: MKMapViewDelegate {
         return annotationView
     }
 
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl)
-    {
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         guard let annotation = view.annotation else { return }
-        if let ann = annotation as? MKParameteredAnnotation {
-            let location = ann.studentLocation
-            performSegue(withIdentifier: SegueIdentifier.editLocation.rawValue, sender: location)
+        if let ann = annotation as? MKParameteredAnnotation ,
+            let location = ann.studentLocation {
+            //performSegue(withIdentifier: SegueIdentifier.editLocation.rawValue, sender: location)
+
+
+            //We could prefix the links with http in case its not there. But in that call any garbage value is treated as link. So, google.com becomes http://google.com but unfortunately sdasdad becomes http://sdasdad which is also a valid link. So ignoring.
+            /*var link = location.mediaURL
+            if !link.contains("http") {
+                link = "http://" + link
+            }*/
+
+            if let url = URL(string: location.mediaURL) {
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [String : Any](), completionHandler: nil)
+                } else {
+                    MessageManager.display(type: .warning, message: CopyText.linkInvalid, in: self, with: errorView)
+                }
+            }
         }
     }
 }

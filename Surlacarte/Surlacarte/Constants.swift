@@ -36,13 +36,17 @@ struct Parse {
     static let restApiKey = "QuWThTdiRmTux3YaDseUSEpUKo7aBYM737yKd4gY"
 }
 
-struct CopyText {
-    static let login = "Login"
-    static let loginProgress = "Please wait. Logging you in..."
-    static let loginErrorMessage = "Error : Username and/or password incorrect. Please try again!"
-    static let loginInvalid = "Username and/or password can not be blank"
-    static let savingSuccess = "Success saving student location"
-    static let savingError = "Error saving student location"
+enum CopyText: String {
+    case login = "Login"
+    case loginProgress = "Please wait. Logging you in..."
+    case loginErrorMessage = "Error : Username and/or password incorrect. Please try again!"
+    case loginInvalid = "Username and/or password can not be blank"
+    case savingSuccess = "Success saving student location"
+    case savingError = "Error saving student location"
+    case connectivityErrorMessage = "Could not connect to internet. Please try again when connectivity resumes."
+    case studentLocationFetchError = "Failed to fetch student locations"
+    case linkInvalid = "The link appears to be invalid and could not be opened"
+    case geocodeFailed = "Unable to determine the coordinates of the location entered"
 }
 
 struct URLs {

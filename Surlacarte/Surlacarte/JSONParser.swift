@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class JSONParser: NSObject {
+final class JSONParser {
     static func parseJSON(from dictionary: [String: Any]) -> Data? {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C722BAE61E9F262F004FAF49 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722BAE51E9F262F004FAF49 /* LocationTableViewCell.swift */; };
 		C722BAE91EA0695D004FAF49 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C722BAE81EA0695D004FAF49 /* AddLocationViewController.swift */; };
+		C735A3071EAEEB6700616C3F /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C735A3061EAEEB6700616C3F /* ActivityIndicatorManager.swift */; };
 		C780DFF41E94AA1A0056BE71 /* ResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C780DFF31E94AA1A0056BE71 /* ResultHandler.swift */; };
 		C780DFF71E94C73C0056BE71 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C780DFF61E94C73C0056BE71 /* MapKit.framework */; };
 		C78CFF3C1E84B7FF009BABE0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C78CFF3B1E84B7FF009BABE0 /* FBSDKLoginKit.framework */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		C722BAE51E9F262F004FAF49 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		C722BAE81EA0695D004FAF49 /* AddLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
+		C735A3061EAEEB6700616C3F /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		C780DFF31E94AA1A0056BE71 /* ResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultHandler.swift; sourceTree = "<group>"; };
 		C780DFF61E94C73C0056BE71 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C78CFF3B1E84B7FF009BABE0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				C7F5599F1E8F4BAE00693347 /* UIModifier.swift */,
 				C7AD2BC41E8F65F900FF3A65 /* StudentLocationManager.swift */,
 				C780DFF31E94AA1A0056BE71 /* ResultHandler.swift */,
+				C735A3061EAEEB6700616C3F /* ActivityIndicatorManager.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				C7AD2BC31E8F553C00FF3A65 /* StudentLocation.swift in Sources */,
 				C7AA591A1E8214A60001FC44 /* NetworkManager.swift in Sources */,
 				C7AA59211E8226DD0001FC44 /* JSONParser.swift in Sources */,
+				C735A3071EAEEB6700616C3F /* ActivityIndicatorManager.swift in Sources */,
 				C7AA59231E8233650001FC44 /* UserDefaultsManager.swift in Sources */,
 				C7AA59121E80E1380001FC44 /* NotificationManager.swift in Sources */,
 				C722BAE61E9F262F004FAF49 /* LocationTableViewCell.swift in Sources */,

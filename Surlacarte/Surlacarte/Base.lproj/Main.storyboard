@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F60a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F60a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,7 +21,7 @@
             <objects>
                 <navigationController id="CQe-iC-xKM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="O2z-6z-0eV"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xdm-0v-CYk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Xdm-0v-CYk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -42,11 +42,11 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YFa-js-ijd">
-                                <rect key="frame" x="-4" y="64" width="328" height="367"/>
+                                <rect key="frame" x="-4" y="0.0" width="328" height="367"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,6 +57,7 @@
                             <constraint firstItem="YFa-js-ijd" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="ddw-8c-1Bd"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-deselected" selectedImage="icon_mapview-selected" id="acW-dT-cKf"/>
                     <navigationItem key="navigationItem" id="Rgu-wW-JU4">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="H75-tj-2cU">
@@ -80,6 +81,7 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="errorView" destination="I9f-Qc-AAh" id="2Vh-kd-mes"/>
                         <outlet property="mapView" destination="YFa-js-ijd" id="6LU-sK-mfv"/>
@@ -96,23 +98,13 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlo-7Q-aez">
-                            <rect key="frame" x="0.0" y="43" width="320" height="1"/>
-                            <color key="backgroundColor" red="0.87843137250000003" green="0.3294117647" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="puT-Wh-JWZ"/>
-                            </constraints>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.93721169230000001" green="0.36928427219999999" blue="0.22568646070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="xlw-ua-C5y" secondAttribute="bottom" constant="2" id="3MV-aN-mTS"/>
-                        <constraint firstItem="dlo-7Q-aez" firstAttribute="leading" secondItem="I9f-Qc-AAh" secondAttribute="leading" id="YGZ-gO-X2E"/>
                         <constraint firstItem="xlw-ua-C5y" firstAttribute="top" secondItem="I9f-Qc-AAh" secondAttribute="top" constant="2" id="aPd-k5-EFv"/>
-                        <constraint firstAttribute="bottom" secondItem="dlo-7Q-aez" secondAttribute="bottom" id="eTn-FZ-1iQ"/>
                         <constraint firstItem="xlw-ua-C5y" firstAttribute="leading" secondItem="I9f-Qc-AAh" secondAttribute="leading" constant="10" id="fkk-OD-nbu"/>
                         <constraint firstAttribute="trailing" secondItem="xlw-ua-C5y" secondAttribute="trailing" constant="10" id="sKX-xH-632"/>
-                        <constraint firstAttribute="trailing" secondItem="dlo-7Q-aez" secondAttribute="trailing" id="sQt-Nk-jfd"/>
                     </constraints>
                     <connections>
                         <outlet property="errorMessage" destination="xlw-ua-C5y" id="Tqk-Fi-wQP"/>
@@ -135,9 +127,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rW7-vK-y1M">
-                                <rect key="frame" x="-4" y="0.0" width="328" height="143"/>
+                                <rect key="frame" x="-4" y="10" width="328" height="143"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where are you studying today?" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="WqM-Yh-sbs">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Where are you studying today?" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="WqM-Yh-sbs">
                                         <rect key="frame" x="20" y="59.5" width="288" height="24"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
@@ -173,10 +165,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvE-Bq-xqF">
-                                <rect key="frame" x="0.0" y="143" width="320" height="337"/>
+                                <rect key="frame" x="0.0" y="153" width="320" height="327"/>
                                 <subviews>
                                     <mapView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OeY-57-zc8">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="327"/>
                                     </mapView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -214,14 +206,14 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2Ad-M2-Dj6" firstAttribute="top" secondItem="d79-DC-RRW" secondAttribute="bottom" id="4Pc-p4-hCG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d79-DC-RRW" secondAttribute="trailing" constant="-20" id="6IB-BZ-7U8"/>
                             <constraint firstItem="2Ad-M2-Dj6" firstAttribute="top" secondItem="UvE-Bq-xqF" secondAttribute="bottom" id="6vd-mR-QgI"/>
                             <constraint firstItem="d79-DC-RRW" firstAttribute="leading" secondItem="L1e-NO-vqF" secondAttribute="leadingMargin" constant="-20" id="9WU-fa-i8h"/>
                             <constraint firstItem="rW7-vK-y1M" firstAttribute="leading" secondItem="L1e-NO-vqF" secondAttribute="leadingMargin" constant="-20" id="Edu-JD-bUB"/>
-                            <constraint firstItem="rW7-vK-y1M" firstAttribute="top" secondItem="e8v-fm-jdg" secondAttribute="bottom" constant="-20" id="G4l-r8-1iO"/>
+                            <constraint firstItem="rW7-vK-y1M" firstAttribute="top" secondItem="e8v-fm-jdg" secondAttribute="bottom" constant="10" id="G4l-r8-1iO"/>
                             <constraint firstItem="d79-DC-RRW" firstAttribute="height" secondItem="rW7-vK-y1M" secondAttribute="height" id="V63-HL-mHe"/>
                             <constraint firstItem="UvE-Bq-xqF" firstAttribute="leading" secondItem="L1e-NO-vqF" secondAttribute="leadingMargin" constant="-16" id="bCe-xB-54H"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UvE-Bq-xqF" secondAttribute="trailing" constant="-16" id="beG-n7-zno"/>
@@ -229,6 +221,7 @@
                             <constraint firstItem="UvE-Bq-xqF" firstAttribute="top" secondItem="rW7-vK-y1M" secondAttribute="bottom" id="xHV-vl-PRN"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="addressTextField" destination="WqM-Yh-sbs" id="vcX-eo-pBH"/>
                         <outlet property="addressTextFieldVertical" destination="Vne-eQ-Jt8" id="8ce-vL-huX"/>
@@ -622,22 +615,12 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuh-BJ-yL6">
-                            <rect key="frame" x="0.0" y="43" width="320" height="1"/>
-                            <color key="backgroundColor" red="0.87843137250000003" green="0.3294117647" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="3nI-Sg-wxP"/>
-                            </constraints>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.93721169230000001" green="0.36928427219999999" blue="0.22568646070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="xuh-BJ-yL6" firstAttribute="leading" secondItem="1IJ-Li-yHq" secondAttribute="leading" id="58P-44-7AO"/>
                         <constraint firstItem="QDB-d9-xmR" firstAttribute="leading" secondItem="1IJ-Li-yHq" secondAttribute="leading" constant="10" id="5eT-3P-eYR"/>
-                        <constraint firstAttribute="trailing" secondItem="xuh-BJ-yL6" secondAttribute="trailing" id="7uq-h1-FBP"/>
                         <constraint firstAttribute="bottom" secondItem="QDB-d9-xmR" secondAttribute="bottom" constant="2" id="EFl-Mp-WiZ"/>
                         <constraint firstAttribute="trailing" secondItem="QDB-d9-xmR" secondAttribute="trailing" constant="10" id="N75-Xu-vc0"/>
-                        <constraint firstAttribute="bottom" secondItem="xuh-BJ-yL6" secondAttribute="bottom" id="Nvl-AN-Nxp"/>
                         <constraint firstItem="QDB-d9-xmR" firstAttribute="top" secondItem="1IJ-Li-yHq" secondAttribute="top" constant="2" id="f8n-C3-4r6"/>
                     </constraints>
                     <connections>

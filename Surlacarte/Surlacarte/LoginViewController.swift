@@ -52,25 +52,28 @@ final class LoginViewController: UIViewController {
 
     @IBAction func didTapLoginButton(_ sender: UIButton) {
         guard isUserInputValid else {
-            self.displayError(errorMessage: CopyText.loginInvalid)
+            displayError(errorMessage: .loginInvalid)
             return
         }
-        sender.setTitle(CopyText.loginProgress, for: .normal)
+        sender.setTitle(CopyText.loginProgress.rawValue, for: .normal)
         sender.isEnabled = false
 
-        _ = loginManager.handleAuthentication(with: UserCredentials(username: usernameTextField.text!, password: passwordTextField.text!)).success { (sessionData) in
-            self.loginManager.isUserLoggedIn = true
-            _ = self.loginManager.fetchUserData(with: sessionData.accountKey).success(successClosure: { (userData) in
+        _ = loginManager.handleAuthentication(with: UserCredentials(username: usernameTextField.text!, password: passwordTextField.text!)).success {[weak self] (sessionData) in
+            guard let weakself = self else { return }
+            weakself.loginManager.isUserLoggedIn = true
+            _ = weakself.loginManager.fetchUserData(with: sessionData.accountKey).success(successClosure: { (userData) in
                 UserDefaultsManager.setObject(object: userData, for: Keys.kUserDataKey)
                 DispatchQueue.main.async {
-                    sender.setTitle(CopyText.login, for: .normal)
-                    sender.isEnabled = true
-                    self.dismiss(animated: true, completion: nil)
+                    weakself.reset(button: sender)
+                    weakself.dismiss(animated: true, completion: nil)
                 }
-            }).failure {
-                self.displayError(errorMessage: CopyText.loginErrorMessage)
-            }}.failure {
-                self.displayError(errorMessage: CopyText.loginErrorMessage)
+            }).failure {errorType in
+                weakself.reset(button: sender)
+                MessageManager.displayError(errorMessage: CopyText.loginErrorMessage, errorType: errorType, errorView: weakself.errorview, viewController: weakself)
+            }}.failure {[weak self] (errorType) in
+                guard let weakself = self else { return }
+                weakself.reset(button: sender)
+                MessageManager.displayError(errorMessage: CopyText.loginErrorMessage, errorType: errorType, errorView: weakself.errorview, viewController: weakself)
             }
     }
 
@@ -83,8 +86,15 @@ final class LoginViewController: UIViewController {
     @IBAction func didTapFBButton(_ sender: UIButton) {
     }
 
-    func displayError(errorMessage: String) {
+    func displayError(errorMessage: CopyText) {
         MessageManager.display(type: .error, message: errorMessage, in: self, with: errorview)
+    }
+
+    func reset(button: UIButton) {
+        DispatchQueue.main.async {
+            button.setTitle(CopyText.login.rawValue, for: .normal)
+            button.isEnabled = true
+        }
     }
 }
 

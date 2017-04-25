@@ -9,7 +9,7 @@
 import UIKit
 
 final class ResultHandler <T> {
-    typealias FailureClosure = (Void)->Void
+    typealias FailureClosure = (ErrorType)->Void
     typealias SuccessClosure = (T)->Void
 
     private var _failures = [FailureClosure]()
@@ -20,8 +20,8 @@ final class ResultHandler <T> {
         switch result {
         case .Success(let output):
             _successes.forEach{$0(output)}
-        case .Failure:
-            _failures.forEach{$0()}
+        case .Failure(let errorType):
+            _failures.forEach{$0(errorType)}
         }
     }
 

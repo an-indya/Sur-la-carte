@@ -8,12 +8,18 @@
 
 import UIKit
 
-enum Result<T> {
-    case Success(T)
-    case Failure
+enum ErrorType : Int {
+    case userInputError = 0
+    case connectionError
+    case responseError
 }
 
-final class NetworkManager: NSObject {
+enum Result<T> {
+    case Success(T)
+    case Failure(cause:ErrorType)
+}
+
+final class NetworkManager {
 
     func createSession(with credentials: UserCredentials, completion: @escaping (_ sessionInfo: Result<SessionData>) -> Void) {
         var urlComponents = URLComponents()
@@ -34,7 +40,7 @@ final class NetworkManager: NSObject {
                 (data, response, error) in
                 guard let _:Data = data, let _:URLResponse = response, error == nil else {
                     print("error")
-                    completion(.Failure)
+                    completion(.Failure(cause: .connectionError))
                     return
                 }
 
@@ -52,12 +58,11 @@ final class NetworkManager: NSObject {
                             UserDefaultsManager.setObject(object: session, for: Keys.kSessionKey)
                             completion(.Success(session))
                         } else {
-                            completion(.Failure)
+                            completion(.Failure(cause: .userInputError))
                         }
                     })
-                }
-                else {
-                    completion(.Failure)
+                } else {
+                    completion(.Failure(cause: .userInputError))
                 }
             }
             task.resume()
@@ -133,7 +138,7 @@ final class NetworkManager: NSObject {
                 (data, response, error) in
                 guard let _:Data = data, let _:URLResponse = response, error == nil else {
                     print("error")
-                    completion(.Failure)
+                    completion(.Failure(cause: .connectionError))
                     return
                 }
 
@@ -148,12 +153,12 @@ final class NetworkManager: NSObject {
                             let uniqueId = user["key"] as? String {
                                 completion(.Success(UserData(firstName: firstName, lastName: lastName, uniqueId: uniqueId)))
                         } else {
-                            completion(.Failure)
+                            completion(.Failure(cause: .userInputError))
                         }
                     })
                 }
                 else {
-                    completion(.Failure)
+                    completion(.Failure(cause: .responseError))
                 }
             }
             task.resume()
@@ -178,7 +183,7 @@ final class NetworkManager: NSObject {
                 (data, response, error) in
                 guard let _:Data = data, let _:URLResponse = response, error == nil else {
                     print("error")
-                    completion(.Failure)
+                    completion(.Failure(cause: .connectionError))
                     return
                 }
 
@@ -210,7 +215,7 @@ final class NetworkManager: NSObject {
                             completion(.Success(studentLocations))
                         }
                     })} else {
-                    completion(.Failure)
+                    completion(.Failure(cause: .responseError))
                 }
             }
             task.resume()
@@ -244,7 +249,7 @@ final class NetworkManager: NSObject {
                 (data, response, error) in
                 guard let _:Data = data, let _:URLResponse = response, error == nil else {
                     print("error")
-                    completion(.Failure)
+                    completion(.Failure(cause: .connectionError))
                     return
                 }
 
@@ -267,7 +272,7 @@ final class NetworkManager: NSObject {
                         }
                     })
                 } else {
-                    completion(.Failure)
+                    completion(.Failure(cause: .responseError))
                 }
 
             }

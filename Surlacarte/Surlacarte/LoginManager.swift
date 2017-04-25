@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class LoginManager: NSObject {
+final class LoginManager {
 
     let networkManager = NetworkManager()
     var isUserLoggedIn  = false
@@ -32,8 +32,8 @@ final class LoginManager: NSObject {
     static func initiateAuthentication() {
         let session : SessionData? = UserDefaultsManager.getObject(for: Keys.kSessionKey)
         if session == nil {
-            let loginViewController = StoryboardManager.instantiateViewController(with: "LoginViewController")
             DispatchQueue.main.async {
+                let loginViewController = StoryboardManager.instantiateViewController(with: "LoginViewController")
                 StoryboardManager.getTopViewController().present(loginViewController, animated: true, completion: nil)
             }
         }

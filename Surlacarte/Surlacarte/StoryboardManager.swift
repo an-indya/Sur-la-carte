@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class StoryboardManager: NSObject {
+final class StoryboardManager {
 
     static func instantiateViewController<T>(with identifier: String) -> T where T: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

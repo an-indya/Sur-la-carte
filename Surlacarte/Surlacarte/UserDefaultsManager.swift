@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class UserDefaultsManager: NSObject {
+final class UserDefaultsManager {
 
     static func setObject<T>(object: T, for key: String) where T: NSCoding {
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: object)

@@ -43,7 +43,7 @@ extension KeyboardNotificationManager {
         guard let viewController = viewController else {
             return
         }
-        if self.selectedTextField == .bottomTextField {
+        if selectedTextField == .bottomTextField {
             viewController.view.frame.origin.y = 0 - getKeyboardHeight(notification)
         }
         else {

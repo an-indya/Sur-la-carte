@@ -34,17 +34,26 @@ final class AddLocationViewController: UIViewController {
         super.viewDidLoad()
         setupKeyboardDismissal ()
         submitButton.setTitle(resolveButtonText(buttonMode: .locateMode), for: .normal)
+        modalPresentationCapturesStatusBarAppearance = true
 
         if selectedLocation != nil {
             executeTextFieldTransitions()
             addressTextField.isUserInteractionEnabled = true
             addressTextField.text = selectedLocation.mapString
             linkTextField.text = selectedLocation.mediaURL
-            locateAddress(location: { (coordinates) in })
+            locateAddress(location: { (coordinates) in
+                if coordinates == nil {
+                    MessageManager.display(type: .error, message: .geocodeFailed, in: self, with: self.errorView)
+                }
+            })
             submitButton.setTitle(resolveButtonText(buttonMode: .updateMode), for: .normal)
         }
 
         addressTextField.becomeFirstResponder()
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
     func setupKeyboardDismissal () {
@@ -72,7 +81,10 @@ final class AddLocationViewController: UIViewController {
             let buttonMode = ButtonMode(rawValue: title) {
             locateAddress(location: { [weak self](coordinates) in
                 guard let weakself = self else { return }
-                guard let coordinates = coordinates else { return }
+                guard let coordinates = coordinates else {
+                    MessageManager.display(type: .error, message: .geocodeFailed, in: weakself, with: weakself.errorView)
+                    return
+                }
                 switch buttonMode {
                 case .submitMode:
                     weakself.submitStudentLocation(shouldUpdate:false, location: coordinates)
@@ -112,9 +124,10 @@ final class AddLocationViewController: UIViewController {
                 studentLocation = StudentLocation(firstName: userData.firstName, lastName: userData.lastName, latitude: location.latitude, longitude: location.longitude, mapString: address, mediaURL: mediaURL, objectId: "", uniqueKey: userData.uniqueId, updatedAt: Date())
             }
 
-            _ = StudentLocationManager.shared.submitStudentLocation(shouldUpdate: shouldUpdate, studentLocation: studentLocation).failure {[weak self] in
+            _ = StudentLocationManager.shared.submitStudentLocation(shouldUpdate: shouldUpdate, studentLocation: studentLocation).failure {[weak self] errorType in
                 guard let weakself = self else { return }
                 MessageManager.display(type: .error, message: CopyText.savingError, in: weakself, with: weakself.errorView)
+                MessageManager.displayError(errorMessage: CopyText.savingError, errorType: errorType, errorView: weakself.errorView, viewController: weakself)
             }.success(successClosure: { [weak self](location) in
                 guard let weakself = self else { return }
                 DispatchQueue.main.async {
@@ -128,8 +141,10 @@ final class AddLocationViewController: UIViewController {
 
     func locateAddress (location: @escaping (CLLocationCoordinate2D?) -> Void) {
         if isTextValid(in: addressTextField) {
+            ActivityManager.showActivityIndicator(in: view)
             geoCode(address: addressTextField?.text, completion: { coordinates in
                 location(coordinates)
+                ActivityManager.hideActivityIndicator()
             })
         } else {
             location(nil)
@@ -141,9 +156,10 @@ final class AddLocationViewController: UIViewController {
         addressTextField.isUserInteractionEnabled = false
         linkTextField.isHidden = false
         linkTextField.becomeFirstResponder()
-        UIView.animate(withDuration: 0.2) {
-            self.inputContainerView.layoutIfNeeded()
-            self.inputContainerView.updateConstraintsIfNeeded()
+        UIView.animate(withDuration: 0.2) {[weak self] in
+            guard let weakself = self else { return }
+            weakself.inputContainerView.layoutIfNeeded()
+            weakself.inputContainerView.updateConstraintsIfNeeded()
         }
     }
 
@@ -154,6 +170,10 @@ final class AddLocationViewController: UIViewController {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) { [weak self](placemarksOptional, error) -> Void in
             guard let weakself = self else { return }
+            if error != nil {
+                completion(nil)
+                return
+            }
             if let placemarks = placemarksOptional {
                 if let location = placemarks.first?.location {
                     DispatchQueue.main.async {
@@ -195,15 +215,4 @@ final class AddLocationViewController: UIViewController {
     func resolveButtonText (buttonMode: ButtonMode) -> String {
         return buttonMode.rawValue
     }
-
-    /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

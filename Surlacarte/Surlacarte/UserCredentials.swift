@@ -9,6 +9,6 @@
 import Foundation
 
 struct UserCredentials {
-    var username: String
-    var password: String
+    let username: String
+    let password: String
 }
